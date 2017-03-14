@@ -25,7 +25,7 @@ case "$REPO_TYPE" in
   "rpm")
     FILES="\"files\":
       [
-        {\"includePattern\": \"\\\\/home\\\\/travis\\\\/build\\\\/killerswan\\\\/ponydep-ncurses\\\\/build\\\\/bin\\\\/(.*\\\\.rpm)\", \"uploadPattern\": \"\$1\"}
+        {\"includePattern\": \"\\\\/home\\\\/travis\\\\/build\\\\/killerswan\\\\/ponydep-ncurses\\\\/build\\\\/bin\\\\/(${PACKAGE_NAME}-${PACKAGE_VERSION}.*\\\\.rpm)\", \"uploadPattern\": \"\$1\"}
       ],
     \"publish\": true" 
     ;;
