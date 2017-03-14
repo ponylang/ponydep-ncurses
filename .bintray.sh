@@ -15,7 +15,7 @@ case "$REPO_TYPE" in
           {
             \"includePattern\": \"\\\\/home\\\\/travis\\\\/build\\\\/killerswan\\\\/ponydep-ncurses\\\\/build\\\\/bin\\\\/(.*\\\\.deb)\", \"uploadPattern\": \"\$1\",
             \"matrixParams\": {
-            \"deb_distribution\": \"pony-language\",
+            \"deb_distribution\": \"killerswan\",
             \"deb_component\": \"main\",
             \"deb_architecture\": \"amd64\"}
          }
@@ -42,7 +42,7 @@ YAML="{
   \"package\": {
     \"repo\": \"$BINTRAY_REPO_NAME\",
     \"name\": \"$PACKAGE_NAME\",
-    \"subject\": \"pony-language\"
+    \"subject\": \"killerswan\"
   },
   \"version\": {
     \"name\": \"$PACKAGE_VERSION\",
