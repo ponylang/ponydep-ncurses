@@ -16,28 +16,41 @@ rvm:
   - 2.2.3
 
 install:
-  - sudo apt-get install -y rpm ruby ruby-dev
+  - sudo apt-get install -y rpm ruby ruby-dev git
   - rvm install ruby-2.2.3
   - rvm use 2.2.3 --default
   - gem install fpm
 
 script:
-  - fpm -s empty -t rpm -p build/bin --name ponydep-ncurses-libs-5-compat --conflicts ponydep-ncurses-libs-5        --provides ponydep-ncurses --version 2017.1 --iteration "${TRAVIS_BUILD_NUMBER}" --description "Virtual package for ncurses-compat" --depends "ncurses-compat-libs>=6"
-  - fpm -s empty -t rpm -p build/bin --name ponydep-ncurses-libs-5        --conflicts ponydep-ncurses-libs-5-compat --provides ponydep-ncurses --version 2017.1 --iteration "${TRAVIS_BUILD_NUMBER}" --description "Virtual package for ncurses"        --depends "ncurses<6" 
+  - export PACKAGE_VERSION="`cat VERSION`"
+  - export PACKAGE_ITERATION="${PACKAGE_ITERATION}${TRAVIS_BUILD_NUMBER}.`git rev-parse --short --verify HEAD^{commit}`";
+  - fpm -s empty -t rpm -p build/bin --name ponydep-ncurses-libs-5-compat --conflicts ponydep-ncurses-libs-5        --provides ponydep-ncurses --version "${PACKAGE_VERSION}" --iteration "${PACKAGE_ITERATION}" --description "An RPM to satisfy the ponyc dependency on ncurses" --depends "ncurses-compat-libs>=6"
+  - fpm -s empty -t rpm -p build/bin --name ponydep-ncurses-libs-5        --conflicts ponydep-ncurses-libs-5-compat --provides ponydep-ncurses --version "${PACKAGE_VERSION}" --iteration "${PACKAGE_ITERATION}" --description "An RPM to satisfy the ponyc dependency on ncurses" --depends "ncurses<6" 
+
+after_success:
+  - sh .bintray.sh rpm "${PACKAGE_VERSION}" ponydep-ncurses-libs-5
+  - sh .bintray.sh rpm "${PACKAGE_VERSION}" ponydep-ncurses-libs-5-compat
 
 notifications:
   email:
     on_success: always
     on_failure: always
     recipients:
-    - FIXMEbuildbot@lists.ponylang.org
+    - kevincantu@gmail.com
 
 deploy:
   - provider: bintray
     user: killerswan
-    file: /home/travis/build/killerswan/ponyc/bintray_rpm.yml
+    file: /home/travis/build/killerswan/ponyc/bintray_rpm_ponydep-ncurses-libs-5.yml
     on:
       branch: release
-      condition: "$UPLOAD = yes"
+    key:
+      secure: XLsh/isnTY3JPQxcy+LMv6I3LafN2ZDPS9UkmIycqkVkKP5Uze23tb81TIv0IKyLAyicVpNskfpin7U5smUiMZ0Nsk0rGAYYgRwAK1C6HZ8bIXe3keqPjNrP4vGfSvnybwwaSaXwGf4Btb+xQbLSN+3b0gunV01prpX7/ly2H7eOZ2BIpBnJjsPEDf8/xhu8BNeF6dW7fgRVwv1jLeyYtXZQ8MDbn2b6ImHqhXT1UZFfM7OX7tlSzAnMHu9hagIVc9NO1VlqNgN8Qc82Rzl6sUpLcDEgTnLyhCjjblTLVxvAxOxxn2aJeIaUJUdIPt2hoDwBXFTudu+KA9ocLThRlbBtrT0X9twVcC0DhMx5rHeDx66/pHt3NfG72/vZYM4ZOQd0GwhdxzjZ48dQmtikChRWse9oIGXkK00du3CGVFDgs6gO469N3Ps4duzKLOmHS+zaMUEy3EGTKzdiL1Tsr77m0tA38h5/Jc2SW2+3p7TwBmyEXMadrYteUrxUkFC+0kPFmmyHS5sr/ZyZUB+cN0ICl1VcRskKEUpNhmZy28Utbw1IwXXnB5VgoGU89vXD2g4gvvV/UZrbFmLfVMjTZUQbNXRMudMehT9DXsqVI64n/Jy2d5gfyizcU4SX4YAsOVn4Lpm1rt8C+HeqQIVQqSCm8qKlzV2nZ+D4Tj09Sfg=
+
+  - provider: bintray
+    user: killerswan
+    file: /home/travis/build/killerswan/ponyc/bintray_rpm_ponydep-ncurses-libs-5-compat.yml
+    on:
+      branch: release
     key:
       secure: XLsh/isnTY3JPQxcy+LMv6I3LafN2ZDPS9UkmIycqkVkKP5Uze23tb81TIv0IKyLAyicVpNskfpin7U5smUiMZ0Nsk0rGAYYgRwAK1C6HZ8bIXe3keqPjNrP4vGfSvnybwwaSaXwGf4Btb+xQbLSN+3b0gunV01prpX7/ly2H7eOZ2BIpBnJjsPEDf8/xhu8BNeF6dW7fgRVwv1jLeyYtXZQ8MDbn2b6ImHqhXT1UZFfM7OX7tlSzAnMHu9hagIVc9NO1VlqNgN8Qc82Rzl6sUpLcDEgTnLyhCjjblTLVxvAxOxxn2aJeIaUJUdIPt2hoDwBXFTudu+KA9ocLThRlbBtrT0X9twVcC0DhMx5rHeDx66/pHt3NfG72/vZYM4ZOQd0GwhdxzjZ48dQmtikChRWse9oIGXkK00du3CGVFDgs6gO469N3Ps4duzKLOmHS+zaMUEy3EGTKzdiL1Tsr77m0tA38h5/Jc2SW2+3p7TwBmyEXMadrYteUrxUkFC+0kPFmmyHS5sr/ZyZUB+cN0ICl1VcRskKEUpNhmZy28Utbw1IwXXnB5VgoGU89vXD2g4gvvV/UZrbFmLfVMjTZUQbNXRMudMehT9DXsqVI64n/Jy2d5gfyizcU4SX4YAsOVn4Lpm1rt8C+HeqQIVQqSCm8qKlzV2nZ+D4Tj09Sfg=
