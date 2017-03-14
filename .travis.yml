@@ -16,7 +16,7 @@ rvm:
   - 2.2.3
 
 install:
-  - sudo apt-get install -y rpm
+  - sudo apt-get install -y rpm ruby ruby-dev
   - rvm use 2.2.3 --default
   - gem install fpm
 
