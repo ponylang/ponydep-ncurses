@@ -43,7 +43,7 @@ notifications:
 deploy:
   - provider: bintray
     user: killerswan
-    file: /home/travis/build/killerswan/ponyc/bintray_rpm_ponydep-ncurses-libs-5.yml
+    file: /home/travis/build/killerswan/ponydep-ncurses/bintray_rpm_ponydep-ncurses-libs-5.yml
     on:
       branch: release
     key:
@@ -51,7 +51,7 @@ deploy:
 
   - provider: bintray
     user: killerswan
-    file: /home/travis/build/killerswan/ponyc/bintray_rpm_ponydep-ncurses-libs-5-compat.yml
+    file: /home/travis/build/killerswan/ponydep-ncurses/bintray_rpm_ponydep-ncurses-libs-5-compat.yml
     on:
       branch: release
     key:
