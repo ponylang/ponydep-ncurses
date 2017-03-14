@@ -17,3 +17,4 @@ So this project will build two RPMs which provide the same virtual package: `pon
 * [FPM documentation](https://github.com/jordansissel/fpm/wiki)
 * a Pony issue discussing [the motivation for this](https://github.com/ponylang/ponyc/issues/1208#issuecomment-286281766)
 * a Stack Overflow thread discussing [how RPM did not (or does not?) yet handle weak dependencies](http://unix.stackexchange.com/questions/57524/yum-and-recommended-suggested-packages/57527#57527)
+* Travis' [documentation on Bintray deployment](https://docs.travis-ci.com/user/deployment/bintray/)
