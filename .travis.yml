@@ -30,8 +30,8 @@ script:
   - fpm -s empty -t rpm -p build/bin --name ponydep-ncurses-libs-5        --conflicts ponydep-ncurses-libs-5-compat --provides ponydep-ncurses --version "${PACKAGE_VERSION}" --iteration "${PACKAGE_ITERATION}" --description "An RPM to satisfy the ponyc dependency on ncurses" --depends "ncurses<6" 
 
 after_success:
-  - sh .bintray.sh rpm "${PACKAGE_VERSION}" ponydep-ncurses-libs-5
-  - sh .bintray.sh rpm "${PACKAGE_VERSION}" ponydep-ncurses-libs-5-compat
+  - sh .bintray.sh rpm "${PACKAGE_VERSION}-${PACKAGE_ITERATION}" ponydep-ncurses-libs-5
+  - sh .bintray.sh rpm "${PACKAGE_VERSION}-${PACKAGE_ITERATION}" ponydep-ncurses-libs-5-compat
 
 notifications:
   email:
