@@ -26,8 +26,8 @@ script:
   - export PACKAGE_ITERATION="${PACKAGE_ITERATION}${TRAVIS_BUILD_NUMBER}.`git rev-parse --short --verify HEAD^{commit}`";
   - mkdir build
   - mkdir build/bin
-  - fpm -s empty -t rpm -p build/bin --name ponydep-ncurses-libs-5-compat --conflicts ponydep-ncurses-libs-5        --provides ponydep-ncurses --version "${PACKAGE_VERSION}" --iteration "${PACKAGE_ITERATION}" --description "An RPM to satisfy the ponyc dependency on ncurses" --depends "ncurses-compat-libs>=6"
-  - fpm -s empty -t rpm -p build/bin --name ponydep-ncurses-libs-5        --conflicts ponydep-ncurses-libs-5-compat --provides ponydep-ncurses --version "${PACKAGE_VERSION}" --iteration "${PACKAGE_ITERATION}" --description "An RPM to satisfy the ponyc dependency on ncurses" --depends "ncurses<6" 
+  - fpm -s empty -t rpm -p build/bin --name ponydep-ncurses-libs-5-compat --conflicts ponydep-ncurses-libs-5        --provides ponydep-ncurses --version "${PACKAGE_VERSION}" --iteration "${PACKAGE_ITERATION}" --description "An RPM to satisfy the ponyc dependency on ncurses" --depends "ncurses-compat-libs >= 6"
+  - fpm -s empty -t rpm -p build/bin --name ponydep-ncurses-libs-5        --conflicts ponydep-ncurses-libs-5-compat --provides ponydep-ncurses --version "${PACKAGE_VERSION}" --iteration "${PACKAGE_ITERATION}" --description "An RPM to satisfy the ponyc dependency on ncurses" --depends "ncurses < 6" 
 
 after_success:
   - sh .bintray.sh rpm "${PACKAGE_VERSION}-${PACKAGE_ITERATION}" ponydep-ncurses-libs-5
