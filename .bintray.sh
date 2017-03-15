@@ -13,9 +13,9 @@ case "$REPO_TYPE" in
     FILES="\"files\":
         [
           {
-            \"includePattern\": \"\\\\/home\\\\/travis\\\\/build\\\\/killerswan\\\\/ponydep-ncurses\\\\/build\\\\/bin\\\\/(.*\\\\.deb)\", \"uploadPattern\": \"\$1\",
+            \"includePattern\": \"\\\\/home\\\\/travis\\\\/build\\\\/ponylang\\\\/ponydep-ncurses\\\\/build\\\\/bin\\\\/(.*\\\\.deb)\", \"uploadPattern\": \"\$1\",
             \"matrixParams\": {
-            \"deb_distribution\": \"killerswan\",
+            \"deb_distribution\": \"pony-language\",
             \"deb_component\": \"main\",
             \"deb_architecture\": \"amd64\"}
          }
@@ -25,14 +25,14 @@ case "$REPO_TYPE" in
   "rpm")
     FILES="\"files\":
       [
-        {\"includePattern\": \"\\\\/home\\\\/travis\\\\/build\\\\/killerswan\\\\/ponydep-ncurses\\\\/build\\\\/bin\\\\/(${PACKAGE_NAME}-${PACKAGE_VERSION}.*\\\\.rpm)\", \"uploadPattern\": \"\$1\"}
+        {\"includePattern\": \"\\\\/home\\\\/travis\\\\/build\\\\/ponylang\\\\/ponydep-ncurses\\\\/build\\\\/bin\\\\/(${PACKAGE_NAME}-${PACKAGE_VERSION}.*\\\\.rpm)\", \"uploadPattern\": \"\$1\"}
       ],
     \"publish\": true" 
     ;;
   "source")
     FILES="\"files\":
       [
-        {\"includePattern\": \"\\\\/home\\\\/travis\\\\/build\\\\/killerswan\\\\/ponydep-ncurses\\\\/build\\\\/bin\\\\/(.*\\\\.tar.bz2)\", \"uploadPattern\": \"\$1\"}
+        {\"includePattern\": \"\\\\/home\\\\/travis\\\\/build\\\\/ponylang\\\\/ponydep-ncurses\\\\/build\\\\/bin\\\\/(.*\\\\.tar.bz2)\", \"uploadPattern\": \"\$1\"}
       ],
     \"publish\": true"
     ;;
@@ -42,7 +42,7 @@ YAML="{
   \"package\": {
     \"repo\": \"$BINTRAY_REPO_NAME\",
     \"name\": \"$PACKAGE_NAME\",
-    \"subject\": \"killerswan\"
+    \"subject\": \"pony-language\"
   },
   \"version\": {
     \"name\": \"$PACKAGE_VERSION\",

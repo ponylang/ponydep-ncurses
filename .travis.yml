@@ -42,17 +42,17 @@ notifications:
 
 deploy:
   - provider: bintray
-    user: killerswan
-    file: /home/travis/build/killerswan/ponydep-ncurses/bintray_rpm_ponydep-ncurses-libs-5.yml
+    user: pony-buildbot-2
+    file: /home/travis/build/ponylang/ponydep-ncurses/bintray_rpm_ponydep-ncurses-libs-5.yml
     on:
       branch: release
     key:
-      secure: uYe22gfbHGnWHbJqYo2HKkvg2agLjt9JlocoDHDW4Vikh1ih+FfPDkqG1MsPEHHnAGQw2oAx04jjbAVurV1wLzcugRTgCHRDnFIfR7zldagmGNtu81w+3UzVySIzcx43+EgVdImJ2AkdhBAhxIlwB23No/lu03bwYT6VI39HaObTGvbV/ND+KaCdlPFXDIzMVbgwp2S27XG7g1X88MIh5gxqxeawCQ40TVkVjXcVTOqSG18ZduEmMCYSHZsxKI3TXlfPf2vvrzkYJXVg7oLptef8fOdEdgDTsyDq0EIBFqFm5HugJ5D+7xmjSDvT2hSI+dkifzrsZPn5w9bJi+TmPTVNpz9IYDwwyA5c6DIZiSB8bY8jWqXXQsmmEKf+OxVxwfnAzCz1tVvfhQAoS1BZEeUNYdQmM6CJj9nWyHEpskm38SvKlJqLBbadi1jzcv4HHHUaKuITFF8bK7mRdF6oH4Jzw6+PuEo7N9nN3iabHct9BAExK8QrZuw/PvkbOgFM8zx+Uhnv67lHAvGbgPhCMiCEtD72MA7ch8wWSzhd7ksGV2ym5GhAsdEkXDboFmEiDFYUuOsZIDcqIzv2oiyFJ412H9WggrTfrLvl1C1CQDzGExC0eQ6hn2dXLPN4BmStAvryI1shMbmokQUFNdnK8+K6jsEN3QlquSA2pX5W5XY=
+      secure: FIXME
 
   - provider: bintray
-    user: killerswan
-    file: /home/travis/build/killerswan/ponydep-ncurses/bintray_rpm_ponydep-ncurses-libs-5-compat.yml
+    user: pony-buildbot-2
+    file: /home/travis/build/ponylang/ponydep-ncurses/bintray_rpm_ponydep-ncurses-libs-5-compat.yml
     on:
       branch: release
     key:
-      secure: uYe22gfbHGnWHbJqYo2HKkvg2agLjt9JlocoDHDW4Vikh1ih+FfPDkqG1MsPEHHnAGQw2oAx04jjbAVurV1wLzcugRTgCHRDnFIfR7zldagmGNtu81w+3UzVySIzcx43+EgVdImJ2AkdhBAhxIlwB23No/lu03bwYT6VI39HaObTGvbV/ND+KaCdlPFXDIzMVbgwp2S27XG7g1X88MIh5gxqxeawCQ40TVkVjXcVTOqSG18ZduEmMCYSHZsxKI3TXlfPf2vvrzkYJXVg7oLptef8fOdEdgDTsyDq0EIBFqFm5HugJ5D+7xmjSDvT2hSI+dkifzrsZPn5w9bJi+TmPTVNpz9IYDwwyA5c6DIZiSB8bY8jWqXXQsmmEKf+OxVxwfnAzCz1tVvfhQAoS1BZEeUNYdQmM6CJj9nWyHEpskm38SvKlJqLBbadi1jzcv4HHHUaKuITFF8bK7mRdF6oH4Jzw6+PuEo7N9nN3iabHct9BAExK8QrZuw/PvkbOgFM8zx+Uhnv67lHAvGbgPhCMiCEtD72MA7ch8wWSzhd7ksGV2ym5GhAsdEkXDboFmEiDFYUuOsZIDcqIzv2oiyFJ412H9WggrTfrLvl1C1CQDzGExC0eQ6hn2dXLPN4BmStAvryI1shMbmokQUFNdnK8+K6jsEN3QlquSA2pX5W5XY=
+      secure: FIXME
