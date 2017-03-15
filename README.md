@@ -20,3 +20,6 @@ So this project will build two RPMs which provide the same virtual package: `pon
 * Travis' [documentation on Bintray deployment](https://docs.travis-ci.com/user/deployment/bintray/)
 * Digital Ocean's [notes on package management commands](https://www.digitalocean.com/community/tutorials/package-management-basics-apt-yum-dnf-pkg)
 * Digital Ocean's [notes on FPM](https://www.digitalocean.com/community/tutorials/how-to-use-fpm-to-easily-create-packages-in-multiple-formats)
+* a tip about [the `rpmrebuild -e -p <rpm_file>` command](http://stackoverflow.com/questions/5613954/extract-the-spec-file-from-rpm-package)),
+* [RPM spec file syntax](http://wiki.rosalab.ru/en/index.php/RPM_spec_file_syntax)
+* [rpm.org's document on Dependencies](http://rpm.org/user_doc/dependencies.html)
