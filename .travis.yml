@@ -38,7 +38,7 @@ notifications:
     on_success: always
     on_failure: always
     recipients:
-    - kevincantu@gmail.com
+    - buildbot@lists.ponylang.org
 
 deploy:
   - provider: bintray
