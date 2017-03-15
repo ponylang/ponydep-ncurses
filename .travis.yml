@@ -47,7 +47,7 @@ deploy:
     on:
       branch: release
     key:
-      secure: FIXME
+      secure: "BMo2OoTA0zyDbrI6qYIHd/qXeqPn7uEdbiPykr7gt8JohhPrKnE01dbb3PBiHf/wQ5llpZ7JqARkjV5Na0Yakazn9aCH52tZxH30Xjz8Y3A0TS953pTjXPcm9wdMV3xK25st14nLRAHOJhD7u1uswgUkvACArJl3ewzdTUNW8bBvZFn0YqIbxugMakZzjTQV9e9mqqtB2DBVTH+AXsgQCz7a6aPJcRiKaCgsyzsPTki7hzlTS904fyDM7tMAlh8md54MABdP6DqFdBZKn4x8twuP0E7mqvYrXm9gqw16YBk/CmcVH0v/XEayWUIwOzW8nkVC5WKuWQtP+8LjiuzgJmQkERiUt/dg4l/jd6WpDz8Tu9sW9WnQQLA+5ztLBkCx6a9W2Y/ZGK6dZjv3gTpzO5haHj6QLsQmhbruZVTLO5DJUsVMVNEfD0AxBx38v7DA6NJhsNypgk4KtxwBw8guSv1g+oC2CJ5Vjgv6aPb8kZt4b3km+vFwFqf3aTErdPOG2Ud4gRfwQAzXluszRLyAT3tdeSxp5m4/QeOfCoR1U6rM2fZtYJNPWac5yq8PErFRXusHtvj3Bh9b3VshLnXpFNJZQQxpXSNBewg+WMWg9a3O4EcG17N7EWaIFsapdDNBsOjcJ6YfvzPqnRgb7FCRg5NXbtbG0wz02WW+LCH6Mfw="
 
   - provider: bintray
     user: pony-buildbot-2
@@ -55,4 +55,4 @@ deploy:
     on:
       branch: release
     key:
-      secure: FIXME
+      secure: "BMo2OoTA0zyDbrI6qYIHd/qXeqPn7uEdbiPykr7gt8JohhPrKnE01dbb3PBiHf/wQ5llpZ7JqARkjV5Na0Yakazn9aCH52tZxH30Xjz8Y3A0TS953pTjXPcm9wdMV3xK25st14nLRAHOJhD7u1uswgUkvACArJl3ewzdTUNW8bBvZFn0YqIbxugMakZzjTQV9e9mqqtB2DBVTH+AXsgQCz7a6aPJcRiKaCgsyzsPTki7hzlTS904fyDM7tMAlh8md54MABdP6DqFdBZKn4x8twuP0E7mqvYrXm9gqw16YBk/CmcVH0v/XEayWUIwOzW8nkVC5WKuWQtP+8LjiuzgJmQkERiUt/dg4l/jd6WpDz8Tu9sW9WnQQLA+5ztLBkCx6a9W2Y/ZGK6dZjv3gTpzO5haHj6QLsQmhbruZVTLO5DJUsVMVNEfD0AxBx38v7DA6NJhsNypgk4KtxwBw8guSv1g+oC2CJ5Vjgv6aPb8kZt4b3km+vFwFqf3aTErdPOG2Ud4gRfwQAzXluszRLyAT3tdeSxp5m4/QeOfCoR1U6rM2fZtYJNPWac5yq8PErFRXusHtvj3Bh9b3VshLnXpFNJZQQxpXSNBewg+WMWg9a3O4EcG17N7EWaIFsapdDNBsOjcJ6YfvzPqnRgb7FCRg5NXbtbG0wz02WW+LCH6Mfw="
